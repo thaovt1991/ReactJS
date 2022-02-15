@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../react-development.js" crossorigin></script>
+    <script src="../react-dom-development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- <script src="./react-component.js">  </script> -->
+
+    <script type="text/babel">
+        // import App from "./react-component.js" ;
+
+        function App(pro) {
+            return (
+                <div>
+                    <h1>{pro.name}</h1>
+                    <img src={pro.photo} />
+                    <p>Price : {pro.price}</p>
+                </div>
+
+            )
+        }
+
+
+        // const htmls = (
+        //     <React.Fragment>
+        //         <App
+        //             name="Ao Thun"
+        //             photo="https://i.pravatar.cc/300"
+        //             price="30000"
+        //         />
+        //         <App
+        //             name="Ao Rean"
+        //             photo="https://i.pravatar.cc/300"
+        //             price="50000"
+        //         />
+        //         <App
+        //             name="Quan Rean"
+        //             photo="https://i.pravatar.cc/300"
+        //             price="30000"
+        //         />
+
+        //     </React.Fragment>
+        // )
+
+
+        // ReactDOM.render(htmls, document.getElementById('root'))
+
+
+
+        // const apiProduct = "https://616e3eb5a83a850017caa8a6.mockapi.io/products" ;
+
+
+        const arr = [
+            {  
+                id :"1",
+                name: "Ao Thun",
+                photo: "https://i.pravatar.cc/300",
+                price: "30000"
+            },
+            {
+                id :"2",
+                name: "Ao Rean",
+                photo: "https://i.pravatar.cc/300",
+                price: "50000"
+            },
+            {
+                id :"3",
+                name: "Quan Rean",
+                photo: "https://i.pravatar.cc/300",
+                price: "30000"
+            }
+        ]
+
+        const page = arr.map(pro=>{
+            return <App 
+                key ={pro.id}
+                name = {pro.name} 
+                photo = {pro.photo} 
+                price = {pro.price} 
+            />
+        }) ;
+
+
+        /// theo ten truong cua doi tuong pro
+        // function App({data, onClick}) {
+
+        //     return (
+        //         <div>
+        //             <h1 onClick = {()=>{onClick(data)}}>{data.name}</h1>  
+        //             <img src={data.photo} />
+        //             <p>Price : {data.price}</p>
+        //         </div>
+
+        //     )
+        // }
+
+        // function Run() {
+        //     const handelClick =(pro)=> {
+        //          console.log(pro.name)
+        //     }
+
+        //     return (
+        //         <div>
+        //             {arr.map(pro => (
+        //                 <App
+        //                     key={pro.id} // vi sao ko co cai nay la no warning
+        //                     // name={pro.name}
+        //                     // photo={pro.photo}
+        //                     // price={pro.price}
+        //                     data = {pro}
+
+        //                     onClick = {handelClick}
+        //                 />
+        //             ))
+
+        //             }
+        //         </div>
+
+        //     )
+        // }
+
+        // // console.log(htmls)
+
+        // ReactDOM.render(<Run/>, document.getElementById("root"))
+
+
+        // function Button({title, href, onClick}) {
+        //     let Conponent = "button";
+
+        //     const props = {};
+
+        //     if (href) {
+        //         Conponent = "a"
+        //         props.href = href;
+        //     }
+        //     if (onClick) {
+        //         props.onClick = onClick;
+        //     }
+        //     return (
+        //         <Conponent  {...props}>
+        //             {title}
+        //         </Conponent>
+        //     )
+        // }
+
+
+        // function App() {
+        //     return (
+        //         <div>
+        //             <Button
+        //                 title="Click me"
+        //                 href="https://reactjs.org/docs/create-a-new-react-app.html"
+        //                 onClick={() => console.log(Math.random)}
+        //             />
+        //         </div>
+        //     )
+        // }
+
+
+
+        // function List({data,children}){
+        //     return(
+        //         <ul>
+        //             {data.map((...props)=>children(...props))}
+        //         </ul>
+        //     )
+        // }
+
+
+        // function App(){
+        //     const cars =["BMW", "Honda", "Mazda"]
+
+        //     return(
+        //         <List data={cars}>
+        //            {(item,index)=><li key={index}>{item}</li>} 
+        //         </List>
+        //     )
+        // }
+
+
+        // const fx = (
+
+        //     <React.Fragment>
+        //         <h1> Hd1</h1>
+        //         <h2> Hd2</h2>
+        //     </React.Fragment>
+            
+        // )
+
+        // ReactDOM.render(fx, document.getElementById("root"))
+        // function HandelDiv({class_name,text}){
+        //     return (
+        //         <div className ={class_name}>{text}</div>
+        //     )
+        // }
+         
+
+
+        // const page = React.createElement("div",{className:"container"},
+        //              <HandelDiv class_name = "header" text ="Header"/>,
+        //             <HandelDiv class_name = "content" text ="Content"/>,
+    //     //             <HandelDiv class_name = "footer" text ="Footer"/>
+    // )
+
+        
+
+        // const page = (
+        //        <div className = "container">
+        //             <HandelDiv class_name = "header" text ="Header"/> 
+        //             <HandelDiv class_name = "content" text ="Content"/>
+        //             <HandelDiv class_name = "footer" text ="Footer"/>
+        //         </div>
+
+        // )
+
+
+        // function HandelPost({}){
+        //       return (
+        //           <div className="post-item">
+        //             <img src="https://i.pravatar.cc/300" />
+        //             <h2 className="post-title">Tille</h2>
+        //             <p className="post-desc">Description</p>
+        //             <p className="post-published">10/10/2000</p>
+        //         </div>
+        //       )
+        // }
+
+        // const page = (
+        //     <div id = "wapper" > 
+        //       <HandelPost />  
+        //     </div>
+        // )
+
+
+        ReactDOM.render(page, document.getElementById("root"))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        .pStyle{
+            color: red;
+        }
+    </style> -->
+    <!-- <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script> -->
+    <script src="../react-development.js" crossorigin></script>
+    <script src="../react-dom-development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+
+    <style>
+        .pStyle{
+            color: red;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1>Hello World !</h1> -->
+    <!-- <div id = "root"></div> -->
+    <div id="root"></div>
+</body>
+
+<script type="text/babel">
+
+
+    // console.log(React.version)
+    // //DOM
+    // const h1Dom = document.createElement('h1') ;
+    // h1Dom.innerText = "Hello World !"
+    // document.body.appendChild(h1Dom) ;
+
+
+    // //React
+    // const h1React = React.createElement('h1',{title:'Hello',className:'heading'},'Hello Guys!')
+
+
+    // console.log(h1Dom)
+    // console.log(h1React)
+
+//     const ulDom = document.createElement('ul') ;
+
+//     const liDom1 = document.createElement('li') ;
+//     liDom1.innerText = "JAVA"
+
+//     const liDom2 = document.createElement('li') ;
+//     liDom2.innerText = "PHP"
+
+//     ulDom.appendChild(liDom1)
+//     ulDom.appendChild(liDom2)
+
+//    document.body.appendChild(ulDom)  ;
+
+
+//    const reactUl = React.createElement(
+//        'ul',
+//         null,
+//         React.createElement('li',null,"JAVA"),
+//         React.createElement('li',null,"PHP"),
+//    )
+
+//    console.log(reactUl)
+
+
+//    const divReact= React.createElement(
+//        'div',
+//        {className : 'post-item'} ,
+//        React.createElement('h2',{title :'Hoc React tai F8'},'Hoc ReactJS') ,
+//        React.createElement('p',null,'Hoc ReactJS tu co ban den nang cao') ,
+//    )
+
+// //    console.log(divReact)
+
+//    let root = document.getElementById('root');
+
+
+
+
+//    ReactDOM.render(divReact,root)
+
+
+//    const codegym = React.createElement(
+//        'p',
+//         // {style:{color:"red",backgroundColor :"green"}}, 
+//         {className : "pStyle"},
+//    'CodeGym Hue'
+//    )
+
+//    ReactDOM.render(codegym,root)
+
+
+
+//    const divR = React.createElement(
+//        'div',
+//        {
+//            style:{
+//                color : 'white',
+//                backgroundColor :"green",
+//                width: '400px'
+//            }
+//        },
+//        React.createElement('h1', {
+//            style:{
+//                textDecoration : 'underline'
+//            }
+//        }, 'Ao thun'),
+//        React.createElement('img',{src: 'https://i.pravatar.cc/300',style:{
+//            borderRadius :'50%'
+//        }},null),
+//        React.createElement('p', null, '200.000 vnd')
+//    )
+    
+    const products = [{
+       name: "AT",
+       photo: "https://i.pravatar.cc/300" ,
+       price :"200000"
+    }, {
+        name: 'AT',
+       photo: "https://i.pravatar.cc/300" ,
+       price :"30000"
+    }
+]
+
+
+
+
+    // const divR =  (<div>
+    //                 {
+    //                   products.map(pro=>
+    //                   <div>
+    //                      <h1>{pro.name}</h1>
+    //                      <img src={pro.photo}/>
+    //                      <p>Price : {pro.price}</p>
+    //                   </div>
+    //                   )
+    //                 }
+    //              </div>)
+
+    // const divR = (
+    //     <div> 
+    //     {
+    //         products.map(pro=>
+    //         <li>
+    //         ${pro.name}
+    //         </li>
+    //         )
+    //     }
+    //     </div>
+    // )
+    function ShowOne(){
+        return  <h1>1</h1>
+    }
+
+    class ShowTwo extends React.Component{
+        render() {
+            return (
+                <h1>2</h1>
+            )
+        }
+    }
+
+   //  <ShowOne />
+        // <ShowTwo />
+
+    const divR = (
+        <div>
+        <ShowOne/>
+        <ShowOne/>
+        <ShowOne/>
+        <ShowTwo />
+        <h1>3</h1>
+
+        </div>
+    )
+
+   ReactDOM.render(divR,root)
+
+</script>
+</html>
